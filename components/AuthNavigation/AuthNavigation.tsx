@@ -3,7 +3,7 @@ import css from "./AuthNavigation.module.css";
 import Link from 'next/link'
 import { Fragment } from 'react'
 import { useAuthStore } from '@/lib/store/authStore'
-import { logout } from '@/lib/api/ClientApi'
+import { logout } from '@/lib/api/clientApi'
 
 
 

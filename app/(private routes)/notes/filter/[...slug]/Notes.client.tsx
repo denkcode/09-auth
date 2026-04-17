@@ -6,7 +6,7 @@ import { useDebouncedCallback } from 'use-debounce'
 import { useState } from 'react'
 import Pagination from '@/components/Pagination/Pagination';
 import { useQuery, keepPreviousData } from '@tanstack/react-query'
-import { fetchNotes } from '@/lib/api/ClientApi'
+import { fetchNotes } from '@/lib/api/clientApi'
 import { FetchNotesResponse } from '@/types/note'
 import Loader from '@/components/Loader/Loader'
 import ErrorMessage from '@/components/ErrorMessage/ErrorMessage';

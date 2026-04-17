@@ -1,6 +1,6 @@
 'use client'
 import css from './SignInPage.module.css'
-import { login, getMe } from '@/lib/api/ClientApi'
+import { login, getMe } from '@/lib/api/clientApi'
 import { APIError } from '@/app/api/api';
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'

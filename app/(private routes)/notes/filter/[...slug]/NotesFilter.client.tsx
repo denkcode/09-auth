@@ -1,6 +1,6 @@
 'use client'
 import { useQuery, keepPreviousData } from '@tanstack/react-query'
-import { fetchNotes } from '@/lib/api/ClientApi'
+import { fetchNotes } from '@/lib/api/clientApi'
 import { FetchNotesResponse } from '@/types/note'
 import NoteList from '@/components/NoteList/NoteList'
 interface Props {

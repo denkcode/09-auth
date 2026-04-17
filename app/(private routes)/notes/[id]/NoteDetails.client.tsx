@@ -8,7 +8,7 @@ import type { Note } from '@/types/note'
 
 
 
-import { fetchNoteById } from "@/lib/api/ClientApi";
+import { fetchNoteById } from "@/lib/api/clientApi";
 
  export default function NoteDetails() {
      const { id } = useParams<{ id: string }>();

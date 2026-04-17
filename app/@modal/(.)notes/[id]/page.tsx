@@ -1,4 +1,4 @@
-import { fetchNoteById } from "@/lib/api/ClientApi"
+import { fetchNoteById } from "@/lib/api/clientApi"
 import NotePreview from "./NotePreview.client"
 import { QueryClient, HydrationBoundary, dehydrate } from "@tanstack/react-query"
 export default async function ModalPages({ params }: { params: Promise<{ id: string }> }) {

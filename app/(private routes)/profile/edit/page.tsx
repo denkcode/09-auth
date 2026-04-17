@@ -4,7 +4,7 @@ import Image from 'next/image'
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { useAuthStore } from '@/lib/store/authStore';
-import { updateMe } from '@/lib/api/ClientApi';
+import { updateMe } from '@/lib/api/clientApi';
 
 const EditProfile = () => {
     const router = useRouter();

@@ -2,7 +2,7 @@
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import css from './SignUpPage.module.css'
-import { register } from '@/lib/api/ClientApi'
+import { register } from '@/lib/api/clientApi'
 import { APIError } from '@/app/api/api';
 
 const CreateUser = () => {
