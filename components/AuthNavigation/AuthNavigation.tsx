@@ -3,13 +3,11 @@ import css from "./AuthNavigation.module.css";
 import Link from 'next/link'
 import { Fragment } from 'react'
 import { useAuthStore } from '@/lib/store/authStore'
-import { useRouter } from "next/navigation";
 import { logout } from '@/lib/api/ClientApi'
 
 
 
 const AuthNavigation = () => {
-  const router = useRouter()
   const isAuthenticated = useAuthStore((state) => state.isAuthenticated)
   const clearIsAuthenticated = useAuthStore((state) => state.clearIsAuthenticated)
  const handleLogout = async () => {
