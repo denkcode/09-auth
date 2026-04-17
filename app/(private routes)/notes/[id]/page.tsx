@@ -5,7 +5,7 @@ import {
   HydrationBoundary,
   dehydrate,
 } from "@tanstack/react-query";
-import { fetchNoteById } from "@/lib/api";
+import { fetchNoteById } from "@/lib/api/api";
 import NoteDetails from "./NoteDetails.client";
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {

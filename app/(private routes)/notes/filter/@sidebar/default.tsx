@@ -1,5 +1,5 @@
 import type { NoteTag } from '@/types/note';
-import css from '@/app/notes/filter/@sidebar/SidebarNotes.module.css';
+import css from '@/app/(private routes)/notes/filter/@sidebar/SidebarNotes.module.css';
 
 const tags: NoteTag[] = ['Work', 'Personal', 'Meeting', 'Shopping', 'Todo'];
 const NotesSidebar = async () => {

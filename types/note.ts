@@ -18,3 +18,28 @@ export interface NewNotePayload {
   content: string;
   tag: NoteTag
 }
+
+export type AuthRequest = {
+  email?: string;
+  password?: string;
+  username?: string;
+};
+
+export type CheckSessionRequest = {
+  message: string
+  success: boolean
+}
+
+export interface FetchNotesResponse {
+    notes: Note[],
+    totalPages: number
+}
+
+// export type User = {
+//   id: string;
+//   email: string;
+//   userName?: string;
+//   photoUrl?: string;
+//   createdAt: Date;
+//   updatedAt: Date;
+// };
