@@ -2,12 +2,13 @@
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import css from './SignUpPage.module.css'
-import { register } from '@/lib/api/clientApi'
-import { APIError } from '@/app/api/api';
+import { register, getMe } from '@/lib/api/clientApi'
+import { useAuthStore } from '@/lib/store/authStore'
 
 const CreateUser = () => {
     const router = useRouter();
     const [error, setError] = useState('')
+    const setUser = useAuthStore((state) => state.setUser)
 
     const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         const form = event.currentTarget
@@ -19,15 +20,12 @@ const CreateUser = () => {
         setError('')
 
         try {
-await register({ email, password });
+          await register({ email, password });
+          const user = await getMe()
+          setUser(user)
 
                 router.push('/profile')
             } catch (error) {
-            setError(
-                (error as APIError).response?.data?.error ??
-                (error as APIError).message ??
-                "Oops... something went wrong",
-            );
         }
     }
     return ( 

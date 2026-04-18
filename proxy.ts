@@ -5,7 +5,7 @@ import { parse } from "cookie";
 import { api } from "@/app/api/api";
 import { number } from "yup";
 
-const PRIVATE_ROUTES = ["/profile"];
+const PRIVATE_ROUTES = ["/profile", '/notes'];
 const AUTH_ROUTES = ["/sign-in", "/sign-up"];
 
 export async function proxy(request: NextRequest) {
@@ -83,7 +83,7 @@ export async function proxy(request: NextRequest) {
     }
 
     if (isAuthRoute) {
-      return NextResponse.redirect(new URL("/profile", request.url));
+      return NextResponse.redirect(new URL("/", request.url));
     }
   }
 }

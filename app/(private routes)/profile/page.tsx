@@ -1,16 +1,16 @@
-'use client'
 import css from "./ProfilePage.module.css";
 import Image from 'next/image'
 import Link from 'next/link'
-import useAuthStore from "@/lib/store/authStore";
+import { getMe } from '@/lib/api/serverApi'
+import { Metadata } from "next";
 
-const Profile = () => {
-  const user = useAuthStore((state) => state.user)
-  const isAuthenticated = useAuthStore((state) => state.isAuthenticated)
+export const metadata: Metadata = {
+  title: 'Hey',
+  description: 'Profile Users',
+}
 
-  if (!isAuthenticated || !user) {
-    return <p>Loading...</p>
-  }
+const Profile = async () => {
+  const user = await getMe()
   return (
     <main className={css.mainContent}>
       <div className={css.profileCard}>
@@ -22,7 +22,7 @@ const Profile = () => {
         </div>
         <div className={css.avatarWrapper}>
           <Image
-            src='https://ac.goit.global/fullstack/react/default-avatar.jpg'
+            src={user.avatar}
             alt="User Avatar"
             width={120}
             height={120}

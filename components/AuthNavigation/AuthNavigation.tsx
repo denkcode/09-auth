@@ -4,16 +4,19 @@ import Link from 'next/link'
 import { Fragment } from 'react'
 import { useAuthStore } from '@/lib/store/authStore'
 import { logout } from '@/lib/api/clientApi'
+import { useRouter } from "next/navigation";
 
 
 
 const AuthNavigation = () => {
+  const router = useRouter()
   const isAuthenticated = useAuthStore((state) => state.isAuthenticated)
   const clearIsAuthenticated = useAuthStore((state) => state.clearIsAuthenticated)
+  const user = useAuthStore((state) => state.user)
  const handleLogout = async () => {
   await logout();
   clearIsAuthenticated();
-  window.location.href = '/sign-in';
+  router.push('/sign-in');
   }
   return (
     <Fragment>
@@ -24,7 +27,7 @@ const AuthNavigation = () => {
         </Link>
       </li> 
       <li className={css.navigationItem}>
-        <p className={css.userEmail}>User email</p>
+        <p className={css.userEmail}>{user?.email}</p>
         <button onClick={handleLogout} className={css.logoutButton}>Logout</button>
       </li>
       </Fragment>

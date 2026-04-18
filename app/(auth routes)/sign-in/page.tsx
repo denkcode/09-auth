@@ -1,7 +1,6 @@
 'use client'
 import css from './SignInPage.module.css'
 import { login, getMe } from '@/lib/api/clientApi'
-import { APIError } from '@/app/api/api';
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { useAuthStore } from '@/lib/store/authStore'
@@ -25,11 +24,7 @@ const SignIn = () => {
                 setUser(user);
                     router.push('/profile')
                 } catch (error) {
-                setError(
-                    (error as APIError).response?.data?.error ??
-                    (error as APIError).message ??
-                    "Oops... something went wrong",
-                );
+
             }
         }
 
